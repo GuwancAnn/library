@@ -1,23 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import "./App.css";
+
+import Header from "./components/Header";
+
+import BookTable from "./components/BookTable";
+
+import List from "./components/Listmenu";
+import supabase from "./components/client.js";
+import AddBooks from "./components/AddBooks";
+import { useBooks } from "./components/hooks/useBooks";
+import { useTeachers } from "./components/hooks/useTeachers";
+import { useLessons } from "./components/hooks/useLessons";
+import { useDepartments } from "./components/hooks/useDepartments";
 
 function App() {
+  // const { books } = useBooks();
+  // const { teachers } = useTeachers();
+  // const { lessons } = useLessons();
+  // const { departments } = useDepartments();
+  // console.log(lessons);
+  // console.log(departments);
+  // console.log(books);
+  // console.log(teachers);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header></Header>{" "}
+      <div className="flex lg:container mx-auto justify-between ">
+        <List></List> <BookTable></BookTable>
+      </div>
+      {/* <Leftbar></Leftbar>
+       */}
+      {/* <AddBooks></AddBooks> */}
     </div>
   );
 }

@@ -1,0 +1,155 @@
+.container {
+  max-width: 1440px;
+  padding: 32px 32px 0px 32px;
+  font-family: "Poppins", sans-serif;
+}
+p {
+  margin: 0;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.search-input {
+  background-color: #eeeeee;
+
+  border: 1px solid #9998a5;
+  border-radius: 15px;
+  font-size: 18px;
+  padding: 12px 14px;
+  margin-right: 32px;
+}
+.search-input:focus {
+  outline: none;
+  border: 1px solid #9998a5;
+}
+.header-right {
+  position: relative;
+}
+.search-icon {
+  position: absolute;
+  top: 18px;
+  right: 12.8%;
+}
+.add-item {
+  background-color: transparent;
+  /* border-radius: 12px;
+  padding: 15px 18px; */
+  border: 1px solid #9998a5;
+}
+.add-item:hover {
+  cursor: pointer;
+  border: 1px solid #34a853;
+}
+.search {
+  display: flex;
+  align-items: center;
+}
+.username {
+  font-size: 20px;
+}
+.departments {
+  width: 25%;
+  margin-right: 24px;
+  margin-left: 32px;
+  background-color: #fbfbfb;
+  padding: 12px;
+
+  border-radius: 12px;
+}
+.dep-icon {
+  padding-top: 5px;
+}
+.lesson-pos {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.dep-text-icon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.deps {
+  font-size: 12px;
+  margin: 0;
+  color: black;
+  opacity: 50%;
+}
+.lessons {
+  width: 50%;
+  position: absolute;
+  right: -216px;
+  border: 0.5px solid #eeeeee;
+  border-radius: 12px;
+  padding: 12px;
+  top: 6px;
+}
+.drop-one {
+  margin-left: 30px !important;
+}
+/* .ant-dropdown-menu-submenu-placement-rightTop {
+  left: 249.953px !important;
+} */
+.kf-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.kf-text {
+  font-family: "Poppins", "sans-serif";
+  border: none;
+  font-size: 20px;
+  background-color: transparent;
+  width: 350px;
+  text-align: left;
+  font-weight: 500;
+}
+.kf-text:hover {
+  cursor: pointer;
+}
+.leftbar {
+  margin-left: 22px;
+  margin-top: 20px;
+  background-color: #f5f5f5;
+  width: 30%;
+  height: 80vh;
+  border-radius: 12px;
+  padding: 10px;
+}
+.kf {
+  /* background-color: #fbfbfb; */
+  /* width: 29%; */
+  padding: 20px 0px 12px 0px;
+  /* border-bottom: 1px solid #9998a5; */
+  /* border-top-left-radius: 10px;
+  border-top-right-radius: 10px; */
+}
+.sapaklar {
+  /* background-color: #fbfbfb; */
+  /* width: 29%; */
+  padding-bottom: 12px;
+  padding-top: 12px;
+}
+.teachers {
+  /* background-color: #fbfbfb; */
+  padding-bottom: 12px;
+  padding-top: 12px;
+  /* width: 29%; */
+  /* border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px; */
+}
+.books-table {
+  width: 63%;
+  margin-top: 20px;
+  margin-right: 32px;
+}
+.t-head {
+  width: 222px;
+  text-align: left;
+  padding: 10px;
+}
+.t-head-all {
+  background-color: #eeeeee;
+}
