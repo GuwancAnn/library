@@ -7,7 +7,7 @@ export const useBooksandTeachers = () => {
   const getData = async () => {
     const { data, error } = await supabase
       .from("bookandteacher")
-      .select("*,books(*)");
+      .select("*,books(*) ,teachers(*)");
 
     if (data) {
       console.log(data);

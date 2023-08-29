@@ -12,7 +12,7 @@ const routes = (
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />}>
-        {/* <Route path=":departmentId" element={<List></List>} /> */}
+        <Route path=":teacherId" element={<List></List>} />
       </Route>{" "}
       <Route path="/add" element={<AddBooks />}></Route>
     </Routes>

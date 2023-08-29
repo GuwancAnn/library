@@ -5,7 +5,9 @@ export const useTeachers = () => {
   const [teachers, setTeachers] = useState([]);
 
   const getData = async () => {
-    const { data, error } = await supabase.from("teachers").select(`*`);
+    const { data, error } = await supabase
+      .from("teachers")
+      .select(`* department(*)`);
 
     if (data) {
       console.log(data);

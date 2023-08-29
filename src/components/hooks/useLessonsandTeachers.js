@@ -6,18 +6,16 @@ export const useLessonsandTeachers = () => {
 
   const getData = async () => {
     const { data, error } = await supabase
-      .from("lessonsandteachers")
-      .select("id");
+      .from("lesson_teachers")
+      .select(`"*", lessons(*),teachers(*)`);
 
     if (data) {
-      console.log(data);
       setLessonsandTeachers(data);
-    }
-    if (error) {
+      console.log(data);
+    } else {
       console.log(error);
     }
   };
-
   useEffect(() => {
     getData();
   }, []);

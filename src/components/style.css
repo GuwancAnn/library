@@ -153,3 +153,6 @@ p {
 .t-head-all {
   background-color: #eeeeee;
 }
+.ant-select-selector {
+  height: 40px !important;
+}

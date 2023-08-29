@@ -1,31 +1,31 @@
 import React, { useState } from "react";
-import { useBooks } from "./hooks/useBooks";
+
 import { useTeachers } from "./hooks/useTeachers";
 import { useLessons } from "./hooks/useLessons";
 import { Link } from "react-router-dom";
 import { useDepartments } from "./hooks/useDepartments";
 import { useParams } from "react-router-dom";
-import { useBooksandTeachers } from "./hooks/useBooksandTeachers";
+
 import { useLessonsandTeachers } from "./hooks/useLessonsandTeachers";
+
 function List() {
   const [openkf, setOpenkf] = useState(false);
   const [openteach, setTeach] = useState(false);
   const [openlesson, setOpenlesson] = useState(false);
-  const { books } = useBooks();
+
   const { teachers } = useTeachers();
   const { lessons } = useLessons();
   const { departments } = useDepartments();
-  const { booksandteachers } = useBooksandTeachers();
+
   const { lessonsandteachers } = useLessonsandTeachers();
   const [departmentId, setDepartmentId] = useState();
   const [lessonId, setLessonId] = useState();
   const [teachId, setTeachId] = useState();
-  console.log(lessonsandteachers);
-  // const params = useParams();
-  // console.log(params);
-  // const departmentId = parseInt(params.departmentId);
-  //console.log(teachers);
-  console.log(booksandteachers);
+  // console.log(lessonsandteachers);
+  const params = useParams();
+  console.log(params);
+
+  //console.log(booksandteachers);
   const dropOpenkf = (id) => {
     // console.log(id);
     const departmentFind = departments.find((dep) => dep.id === id);
@@ -41,7 +41,7 @@ function List() {
 
   const lessonOpen = (id) => {
     console.log(id);
-    console.log(id);
+
     const lessonFind = lessons.find((less) => less.id === id);
     console.log(lessonFind.id, "ledfinid");
     setLessonId(lessonFind.id);
@@ -50,7 +50,7 @@ function List() {
 
   const teachOpen = (id) => {
     console.log(id);
-    console.log(id);
+
     const teachFind = teachers.find((teach) => teach.id === id);
     setTeachId(teachFind.id);
     console.log(teachFind.id, "teaxh");
@@ -162,20 +162,25 @@ function List() {
                       }
                     })}
                   </div>
-                  {booksandteachers.map((bookandteach) => {
-                    console.log(bookandteach.teachers.id);
-                    return openlesson ? (
+                  {lessonsandteachers.map((lessonandteach) => {
+                    return openlesson &&
+                      lessonandteach.lessons.id === lessonId ? (
                       <>
                         <div className="py-3">
                           <div className="flex items-center justify-between">
-                            <button
-                              className="text-lg font-normal  font-[Poppins]"
-                              onClick={() =>
-                                teachOpen(bookandteach.teachers.id)
-                              }
+                            <Link
+                              to={`/${lessonandteach.teachers.id}`}
+                              key={lessonandteach.teachers.id}
                             >
-                              {bookandteach.teachers.teach_name}
-                            </button>
+                              <button
+                                className="text-lg font-normal  font-[Poppins]"
+                                onClick={() =>
+                                  teachOpen(lessonandteach.teachers.id)
+                                }
+                              >
+                                {lessonandteach.teachers.teach_name}
+                              </button>
+                            </Link>
                           </div>
                         </div>
                       </>
@@ -190,6 +195,7 @@ function List() {
             </>
           );
         })}
+        {/* <BookTable setTeachId={setTeachId} teachId={teachId}></BookTable> */}
       </div>
     </>
   );
